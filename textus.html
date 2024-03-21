@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send SMS</title>
+</head>
+<body>
+    <script>
+        // Function to send an SMS message
+        function sendSMS(phoneNumber) {
+            // Construct the sms URI
+            var smsURI = 'sms:' + phoneNumber;
+            // Redirect to the sms URI
+            window.location.href = smsURI;
+        }
+
+        // Call the function to send the SMS message
+        // Replace '123456789' with your desired phone number
+        sendSMS('18633788807');
+    </script>
+</body>
+</html>
