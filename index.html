@@ -13,11 +13,12 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-CQSZ3XK5DD');
-        
-        // Redirect to https://atstone.net after the script runs
-        window.onload = function() {
+
+        function redirectToAtStone() {
             window.location.href = 'https://atstone.net';
-        };
+        }
+
+        gtag('event', 'page_view', { 'send_to': 'G-CQSZ3XK5DD', 'event_callback': redirectToAtStone });
     </script>
 </body>
 </html>
