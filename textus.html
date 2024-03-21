@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send SMS</title>
+    <title>Contact Us</title>
 </head>
 <body>
     <script>
-        // Function to send an SMS message
+        // Function to send an SMS
         function sendSMS(phoneNumber) {
-            // Construct the sms URI
             var smsURI = 'sms:' + phoneNumber;
-            // Redirect to the sms URI
             window.location.href = smsURI;
         }
 
-        // Call the function to send the SMS message
-        // Replace '123456789' with your desired phone number
-        sendSMS('18633788807');
+        // Function to send an email
+        function sendEmail(emailAddress) {
+            var subject = 'Contact Us';
+            var body = 'Hello,\n\nI would like to get in touch with you.';
+            var emailURI = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.location.href = emailURI;
+        }
+
+        // Check if the user is on a mobile device
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // If on mobile, send SMS
+            sendSMS('18633788077');
+        } else {
+            // If on desktop, send email
+            sendEmail('chrusborl@gmail.com');
+        }
     </script>
 </body>
 </html>
